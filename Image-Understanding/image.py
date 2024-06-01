@@ -24,7 +24,6 @@ contours, hierarchy = cv2.findContours(mask, cv2.RETR_CCOMP, cv2.CHAIN_APPROX_TC
 drawing = np.zeros((hsvImage.shape[0], hsvImage.shape[1], 3), dtype=np.uint8)
 CountersImg = cv2.drawContours(drawing, contours, -1, (0, 255, 0), 1)
 
-# Find the index of the largest contour
 areas = [cv2.contourArea(c) for c in contours]
 max_index = np.argmax(areas)
 cnt = contours[max_index]
